@@ -17,9 +17,15 @@ class TestCalculator(unittest.TestCase):
     def test_multiply(self):
         self.assertEqual(self.calc.multiply(7, 6), 42)
         self.assertEqual(self.calc.multiply(3, 5), 15)
+    def test_multiply_lessthan0(self):
+        self.assertEqual(self.calc.multiply(7, -6), -42)
+        self.assertEqual(self.calc.multiply(-3, 5), -15)
     def test_divide(self):
         self.assertEqual(self.calc.divide(72, 8), 9)
         self.assertEqual(self.calc.divide(16, 3), 5)
+    def test_divide_lessthan0(self):
+        self.assertEqual(self.calc.divide(-72, 8), -9)
+        self.assertEqual(self.calc.divide(16, -3), -5)
     def test_modulo(self):
         self.assertEqual(self.calc.modulo(10, 7), 3)
         self.assertEqual(self.calc.modulo(52, 12), 4)
